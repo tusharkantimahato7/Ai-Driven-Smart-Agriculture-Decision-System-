@@ -1,0 +1,143 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "function ${1:ComponentName}() {",
+      "  return (",
+      "    <div className=\"${2:container}\">",
+      "      ${3:/* Content */}",
+      "    </div>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React functional component"
+  },
+  "React Component with State": {
+    "prefix": "rfcs",
+    "body": [
+      "import React, { useState } from 'react';",
+      "",
+      "function ${1:ComponentName}() {",
+      "  const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState(${3:initialValue});",
+      "",
+      "  return (",
+      "    <div className=\"${4:container}\">",
+      "      ${5:/* Content */}",
+      "    </div>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React component with useState"
+  },
+  "React Component with Effect": {
+    "prefix": "rfce",
+    "body": [
+      "import React, { useState, useEffect } from 'react';",
+      "",
+      "function ${1:ComponentName}() {",
+      "  const [${2:state}, set${2/(.*)/${1:/capitalize}/}] = useState(${3:initialValue});",
+      "",
+      "  useEffect(() => {",
+      "    ${4:// Effect logic}",
+      "    ",
+      "    return () => {",
+      "      ${5:// Cleanup}",
+      "    };",
+      "  }, [${6:dependencies}]);",
+      "",
+      "  return (",
+      "    <div className=\"${7:container}\">",
+      "      ${8:/* Content */}",
+      "    </div>",
+      "  );",
+      "}",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React component with useEffect"
+  },
+  "API Service Function": {
+    "prefix": "api-service",
+    "body": [
+      "export const ${1:functionName} = async (${2:params}) => {",
+      "  try {",
+      "    const response = await api.${3|get,post,put,delete|}('${4:/endpoint}', ${5:data});",
+      "    return response.data;",
+      "  } catch (error) {",
+      "    console.error('${1:functionName} error:', error);",
+      "    throw error;",
+      "  }",
+      "};"
+    ],
+    "description": "API service function with error handling"
+  },
+  "Custom React Hook": {
+    "prefix": "use-hook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "export const use${1:HookName} = (${2:params}) => {",
+      "  const [${3:state}, set${3/(.*)/${1:/capitalize}/}] = useState(${4:initialValue});",
+      "  const [loading, setLoading] = useState(false);",
+      "  const [error, setError] = useState(null);",
+      "",
+      "  useEffect(() => {",
+      "    ${5:// Hook logic}",
+      "  }, [${6:dependencies}]);",
+      "",
+      "  return { ${3:state}, loading, error };",
+      "};"
+    ],
+    "description": "Custom React hook"
+  },
+  "Form Handler": {
+    "prefix": "form-handler",
+    "body": [
+      "const [formData, setFormData] = useState({",
+      "  ${1:field}: ${2:initialValue}",
+      "});",
+      "",
+      "const handleChange = (e) => {",
+      "  setFormData({",
+      "    ...formData,",
+      "    [e.target.name]: e.target.value",
+      "  });",
+      "};",
+      "",
+      "const handleSubmit = async (e) => {",
+      "  e.preventDefault();",
+      "  try {",
+      "    ${3:// Submit logic}",
+      "  } catch (error) {",
+      "    console.error('Submit error:', error);",
+      "  }",
+      "};"
+    ],
+    "description": "Form handling logic"
+  },
+  "Try Catch Block": {
+    "prefix": "tryc",
+    "body": [
+      "try {",
+      "  ${1:// Try block}",
+      "} catch (error) {",
+      "  console.error('${2:Error message}:', error);",
+      "  ${3:// Error handling}",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+  "Console Log": {
+    "prefix": "clg",
+    "body": [
+      "console.log('${1:message}:', ${2:variable});"
+    ],
+    "description": "Console log"
+  }
+}
